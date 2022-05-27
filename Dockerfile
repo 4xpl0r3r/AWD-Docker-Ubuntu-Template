@@ -7,7 +7,7 @@ RUN apt-get update && \
     sed -i 's/#*PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config && \
     useradd ctf -m
 
-ENV TZ=Asia/Shanghai
+ENV TZ=Asia/Shanghai DEBIAN_FRONTEND=noninteractive
 
 # Specific
 
