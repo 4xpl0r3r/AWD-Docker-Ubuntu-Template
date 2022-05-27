@@ -13,4 +13,7 @@ ENV TZ=Asia/Shanghai DEBIAN_FRONTEND=noninteractive
 
 COPY files /tmp/files
 
-ENTRYPOINT [ "/bin/bash" ,"/tmp/files/entrypoint.sh"]
+RUN mv /tmp/files/entrypoint.sh / && \
+    rm -rf /tmp/files/
+
+ENTRYPOINT [ "/bin/bash" ,"/entrypoint.sh"]
