@@ -1,0 +1,34 @@
+version: '3'
+services:
+
+  fix_php_team1:
+    container_name: "fix_php_team1"
+    image: "fix_php"
+    build: .
+    environment:
+      - ROOTPASS=SrK6UGlyUXYY
+      - CTFPASS=NpHwfvNZdgow
+    ports:
+      - "10000:80"
+      - "10010:22"
+
+  # fix_php_team2:
+  #   container_name: "fix_php_team2"
+  #   image: "fix_php"
+  #   build: .
+  #   ports:
+  #     - "10001:80"
+  #     - "10011:22"
+
+  # fix_php_team3:
+  #   container_name: "fix_php_team3"
+  #   image: "fix_php"
+  #   build: .
+  #   ports:
+  #     - "10002:80"
+  #     - "10012:22"
+
+# docker-compose up -d # 全体启动
+# 如需重置某队伍的靶机
+# docker-compose stop fix_php_team1
+# docker-compose up fix_php_team1 --force-recreate
